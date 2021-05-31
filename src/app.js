@@ -4,7 +4,6 @@ const app=express();
 const hbs=require('hbs');
 const geocode = require('./utils/geocode');
 const forecast=require('./utils/forecast');
-const { response } = require('express');
 
 
 // geocode('jaipur',(error,resposne)=>{
