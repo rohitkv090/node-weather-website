@@ -1,21 +1,11 @@
 const path=require('path');
 const express=require('express');
-const app=express();
 const hbs=require('hbs');
 const geocode = require('./utils/geocode');
 const forecast=require('./utils/forecast');
 
-
-// geocode('jaipur',(error,resposne)=>{
-//     if(error)
-//         {
-//             return res.send(error);
-//         }
-//     else 
-//     {
-//         console.log(resposne.latitude);
-//     }   
-// })
+const app=express();
+const port=process.env.PORT || 3000;
 
 const publicDirectoryPath=path.join(__dirname,'../public');
 const viewDirectroyPath=path.join(__dirname,'../templates/views');
@@ -97,8 +87,8 @@ app.get('*',(req,res)=>{
     })
 })
 
-app.listen(3000,()=>{
-    console.log('Server is up on port 3000');
+app.listen(port,()=>{
+    console.log('Server is up on port '+port);
 
 });
 
