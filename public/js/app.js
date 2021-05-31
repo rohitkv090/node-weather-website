@@ -3,6 +3,7 @@ const search = document.querySelector('input')
 
 const message1=document.querySelector('#message1');
 const message2=document.querySelector('#message2');
+const icon=document.querySelector('#icon')
 
 console.log('Hello');
 
@@ -26,6 +27,8 @@ weatherForm.addEventListener('submit', (e) => {
                 console.log(data.forecast)
                 message1.textContent=data.location;
                 message2.textContent=`${data.forecast.weather_description} out there.Temperatur is ${data.forecast.temperature} but it feels like ${data.forecast.feelslike} out there`;
+                icon.src=data.forecast.img;
+                
                 
             }
         })
